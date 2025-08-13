@@ -1,5 +1,5 @@
 //
-//  ActivityIndicator.swift
+//  DSActivityIndicator.swift
 //  TechAssignment
 //
 //  Created by Rakesh's Macbook Pro on 08/08/25.

@@ -15,7 +15,7 @@ final class RouterViewBuilderTests: XCTestCase {
         let route = AppRoute.userList
         let view = RouterViewBuilder.view(for: route)
         
-        // Check if the view is UserListView type
+        // Check if the view is UserListView
         let viewTypeName = String(describing: type(of: view))
         XCTAssertTrue(viewTypeName.contains("UserListView"))
     }
@@ -26,7 +26,7 @@ final class RouterViewBuilderTests: XCTestCase {
         let route = AppRoute.userDetail(user)
         let view = RouterViewBuilder.view(for: route)
 
-        // Check if the view is UesrDetailView type
+        // Check if the view is UesrDetailView
         let viewTypeName = String(describing: type(of: view))
         XCTAssertTrue(viewTypeName.contains("UesrDetailView"))
     }

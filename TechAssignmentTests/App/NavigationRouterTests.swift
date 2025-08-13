@@ -41,7 +41,7 @@ final class NavigationRouterTests: XCTestCase {
     }
 
     func testPopOnEmptyPathDoesNothing() {
-        router.pop() // nothing to pop
+        router.pop()
         XCTAssertEqual(router.path.count, 0)
     }
 

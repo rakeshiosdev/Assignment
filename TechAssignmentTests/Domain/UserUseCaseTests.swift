@@ -9,29 +9,25 @@ import XCTest
 @testable import TechAssignment
 
 final class UserUseCaseTests: XCTestCase {
-    
-    // MARK: - Test Success Scenario
     func testUserUseCase_WhenFetchUserSucceeds_ReturnsUsers() async throws {
-        // Arrange
+        // Create a mock repository with default user data
         let mockRepository = MockUserRepository()
         let useCase = UserUseCase(repository: mockRepository)
         
-        // Act
         let users = try await useCase.excute()
         
-        // Assert
+        // Verify the returned users match the expected data
         XCTAssertEqual(users.count, 1)
         XCTAssertEqual(users.first?.name, "Leanne Graham")
     }
 
-    // MARK: - Test Failure Scenario
     func testUserUseCase_WhenFetchUserFails_ThrowsError() async {
-        // Arrange
+        // Create a mock repository configured to throw an error
         let mockRepository = MockUserRepository()
         mockRepository.shouldThrowError = true
         let useCase = UserUseCase(repository: mockRepository)
         
-        // Act & Assert
+        // Execute the use case and confirm that an error is thrown
         do {
             _ = try await useCase.excute()
             XCTFail("Expected error to be thrown, but got success")
@@ -41,7 +37,7 @@ final class UserUseCaseTests: XCTestCase {
     }
 }
 
-// MARK: - Mock Repository
+// Mock Repository
 class MockUserRepository: UserRepositoryProtocol {
     var shouldThrowError = false
     

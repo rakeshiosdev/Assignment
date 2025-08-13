@@ -16,7 +16,7 @@ struct UserListView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemGroupedBackground) // Match this to your desired background
+            Color(.systemGroupedBackground)
                 .ignoresSafeArea()
             List {
                 ForEach(viewModel.users) { user in

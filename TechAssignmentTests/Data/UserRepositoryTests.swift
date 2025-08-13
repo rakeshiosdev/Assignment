@@ -10,7 +10,7 @@ import XCTest
 
 final class UserRepositoryTests: XCTestCase {
     func testFetchUser_ReturnsMappedDomainModels() async throws {
-        // Arrange
+        // Set up mock data, dependencies, and repository
         let mockUserDTO = MockJson.userModelDTO
         
         let mockNetworkManager = MockNetworkManager()
@@ -18,10 +18,10 @@ final class UserRepositoryTests: XCTestCase {
         
         let repository = UserRepository(networkManager: mockNetworkManager)
         
-        // Act
+        // Fetch users from the repository
         let users = try await repository.fetchUser()
         
-        // Assert
+        // Verify the fetched user matches the expected data
         XCTAssertEqual(users.count, 1)
         let user = users[0]
         XCTAssertEqual(user.id, 1)
@@ -29,6 +29,7 @@ final class UserRepositoryTests: XCTestCase {
     }
 }
 
+//Mock Network manager
 class MockNetworkManager: NetworkManager {
     var mockUsers: [UserModelDTO] = []
     

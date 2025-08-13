@@ -35,12 +35,12 @@ final class APIEndpointTests: XCTestCase {
             let actualComponents = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)!
             let expectedComponents = URLComponents(string: expectedURLString)!
             
-            // Compare scheme, host, and path
+            // Compare scheme, host, and path of the URLs
             XCTAssertEqual(actualComponents.scheme, expectedComponents.scheme)
             XCTAssertEqual(actualComponents.host, expectedComponents.host)
             XCTAssertEqual(actualComponents.path, expectedComponents.path)
             
-            // Compare query items ignoring order
+            // Compare query items while ignoring order
             let actualQueryItems = Set(actualComponents.queryItems ?? [])
             let expectedQueryItems = Set(expectedComponents.queryItems ?? [])
             XCTAssertEqual(actualQueryItems, expectedQueryItems)

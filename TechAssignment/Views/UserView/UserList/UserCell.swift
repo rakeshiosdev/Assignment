@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-private typealias Strings = UserListViewConstants.Strings
-
 struct UserCell: View {
     let user: UserModel
     

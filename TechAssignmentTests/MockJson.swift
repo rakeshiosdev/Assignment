@@ -9,6 +9,7 @@ import Foundation
 @testable import TechAssignment
 
 enum MockJson {
+    // Mock UserModel
     static let userModel = UserModel(
         id: 1,
         fullName: "Leanne Graham",
@@ -19,6 +20,7 @@ enum MockJson {
         website: "hildegard.org"
     )
     
+    // Mock UserModelDTO
     static let userModelDTO = UserModelDTO(
         id: 1,
         name: "Leanne Graham",
@@ -40,6 +42,7 @@ enum MockJson {
         )
     )
     
+    // Mock UserDomainModel
     static let userDomainModel = UserDomainModel(
         id: 1,
         name: "Leanne Graham",
